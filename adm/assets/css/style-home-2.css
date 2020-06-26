@@ -1,0 +1,320 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/01/2019, 10:41:19
+    Author     : EdiloSousa
+*/
+
+body{
+    margin: 0px;
+}
+.header{
+    background-color: crimson;
+    padding-left: 3%;
+    padding-top: 5px;
+    -webkit-box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.75);
+}
+.header h4{
+    font-family: "Arial";
+    font-size: 20px;
+    padding-bottom: 4px;
+}
+.header h4 span{
+    /*color:#FFF;*/
+}
+
+.header h4 .subtitle-header{
+    color: #FFF;
+    font-size: 14px;
+}
+
+.area-profile{
+    margin-left: 10px;
+    margin-top: -13px;
+    width:94%;
+}
+.area-profile img{
+    margin-left: 10px;
+
+}
+
+.area-profile p{
+    margin-left: 10px;
+    margin-bottom: -12px;
+}
+
+.area-profile .logoff{
+    margin-top: 15px;
+    cursor:pointer;
+}
+
+.tbl-first{
+    font-family: "Arial";
+    font-size: 14px;
+    color:#FFF;
+    background: #1b6d85;
+}
+.tbl-first p{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 10px;
+}
+
+.tbl-second-one{
+    font-family: "Arial";
+    margin-left: 10px;
+}
+
+.tbl-second{
+    background: gainsboro;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1359px) {
+	.tbl-second{
+    	font-size: 12px;
+	}
+}
+
+
+.linharesult:hover{
+    cursor: pointer;
+    background: grey;
+    color:#FFF;
+}
+.d-none{
+    display:none;   
+}
+.body-content{
+    margin-top: -15px;
+}
+
+.modal,
+.modal-box {
+    z-index: 900;
+}
+
+.modal-sandbox {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: transparent;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgb(0,0,0);
+    background: rgba(0,0,0,.8);
+    overflow: auto;
+}
+
+.modal-box {
+    position: relative;
+    width: 80%;
+    max-width: 920px;   
+    margin: 100px auto;
+    animation-name: modalbox;
+    animation-duration: .4s;
+    animation-timing-function: cubic-bezier(0,0,.3,1.6);
+}
+
+.modal-header {
+    padding: 20px 40px;
+    background: #FFF;
+    color: black;
+}
+
+.modal-body {
+    font-family: "Arial";
+    font-size: 12px;
+    background: #ECEFF1;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+/* Close Button */
+.close-modal {
+    text-align: right;
+    cursor: pointer;
+}
+
+/* Animation */
+@-webkit-keyframes modalbox {
+    0% {
+        top: -250px; 
+        opacity: 0;
+    }
+    100% {
+        top: 0; 
+        opacity: 1;
+    }
+}
+
+@keyframes modalbox {
+    0% {
+        top: -250px; 
+        opacity: 0;
+    }
+    100% {
+        top: 0; 
+        opacity: 1;
+    }
+}
+
+p {
+    line-height: 1.4em;
+}
+
+
+.modal-trigger, button {
+    cursor: pointer;
+    background: transparent;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+
+
+
+@media screen and (max-width: 1359px) {
+        .tbl_empenho {
+            width: 50%;
+        }
+    }
+
+.tbl_descrica{
+	font-weight: 600;
+}
+    @media screen and (max-width: 1359px) {
+        .tbl_descrica{
+            width:20%;
+            font-size: 11px;
+        }
+    }
+   
+   
+.lnocod{
+	font-size: 14px;
+	font-weight: 600; 
+	width: 8%;
+}
+@media screen and (max-width: 1359px){
+	.lncod{
+			font-size: 12px;
+			width: 7%;
+	}
+}
+
+
+.tdqtds{
+width: 10%; 
+text-align: center;
+}
+@media screen and (max-width: 1359px){
+.tdqtds{
+	width: 11%; 
+	text-align: left;
+	}
+}
+
+.inputqtd1{
+	width:80px;
+	padding:4px;
+	text-align: center;
+	font-size: 15px;
+	color: #000;
+	font-weight: 600
+}
+
+@media screen and (max-width: 1359px){
+	.inputqtd1{
+		width: 50px;
+	}	
+}
+
+.inputqtd2{
+	width:80px; 
+	padding:4px; 
+	text-align: center; 
+	font-size: 15px; 
+	color: #000; 
+	font-weight: 600;
+}
+
+@media screen and (max-width: 1359px){
+	.inputqtd2{
+		width: 50px;
+	}
+}
+
+
+.qtdempe{
+	width:80px; 
+	padding:4px; 
+	text-align: center; 
+	font-size: 15px; 
+	color: #000; 
+	font-weight: 600
+}
+
+@media screen and (max-width: 1359px){
+.qtdempe{
+	width: 50px;
+}
+
+}
+ 
+.tdempe{
+	text-align: center; 
+	vertical-align: middle;
+}
+
+@media screen and (max-width: 1359px){
+	.tdempe{
+		width: 8%;
+	}	
+}
+
+.tblmov{
+		font-size: 11px;
+} 
+
+@media screen and (max-width: 1359px){
+		.tblmov{
+		width: 100%;
+	} 
+}
+
+.movuser{
+	width:50%;
+}
+
+@media screen and (max-width: 1359px){
+	.movuser{
+		width:10%;
+	}
+
+}
+
+.movdata{
+	width:40%;
+}
+
+@media screen and (max-width: 1359px){
+.movdata{
+	width:60%;
+}
+
+}

@@ -1,0 +1,56 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28/01/2019, 10:41:19
+    Author     : EdiloSousa
+*/
+
+body{
+    margin: 0px;
+}
+.header{
+    background-color: crimson;
+    padding-left: 3%;
+    padding-top: 5px;
+    -webkit-box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.75);
+    box-shadow: 0px 6px 9px -1px rgba(0,0,0,0.75);
+}
+.header h4{
+    font-family: "Arial";
+    font-size: 20px;
+    padding-bottom: 4px;
+}
+.header h4 span{
+    /*color:#FFF;*/
+}
+
+.header h4 .subtitle-header{
+    color: #FFF;
+    font-size: 14px;
+}
+
+.section-login{
+    margin-top: 10%;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 7px;
+}
+
+.depdev{
+    margin-top: 20%;
+    text-align: center;
+    font-family: "Arial";
+    font-size: 13px;
+}
+.depdev h3{
+    font-weight: 550;
+}
+
+#login-form label{
+    font-size: 14px;
+    font-family: "Arial";
+}
