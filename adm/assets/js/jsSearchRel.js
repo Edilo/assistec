@@ -23,19 +23,19 @@ $('#btnSearchRelGer').click(function () {
     }else{
         $.ajax({
             type: "POST",
-            url: "http://192.168.100.140/cisbioweb/adm/controle-relatorio/gerarRelatorio",
+            url: "http://localhost/cisbioweb/adm/controle-relatorio/gerarRelatorio",
             data: {
                 evento: evento,
                 dtini: dtini,
                 dtfin: dtfin
             },
             beforeSend: function () {
-                $('#CafeQtdRel').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-                $('#AlmocoQtdRel').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-                $('#LancheQtdRel').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-                $('#JantaQtdRel').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-                $('#CeiaQtdRel').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-                $('#TotalQtdRel').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+                $('#CafeQtdRel').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+                $('#AlmocoQtdRel').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+                $('#LancheQtdRel').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+                $('#JantaQtdRel').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+                $('#CeiaQtdRel').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+                $('#TotalQtdRel').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
                 $('#tabelaRegistro').html("");
             },
             success: function (resultado) {
