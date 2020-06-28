@@ -34,4 +34,27 @@ class ControleUsuario {
 
 
     }
+
+    public function altusuario(){
+        $id = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
+        $login = filter_input(INPUT_POST, 'login', FILTER_DEFAULT);
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_DEFAULT);
+
+        if($senha === ''):
+            $Dados = [
+                'NOME' => $nome,
+                'LOGIN' => $login
+            ];
+        else:
+            $Dados = [
+                'NOME' => $nome,
+                'LOGIN' => $login,
+                'SENHA' => md5($senha)
+            ];
+        endif;
+
+        $altusuario = new ModelsUsuario();
+        $altusuario->altusuario($id,$Dados);
+    }
 }

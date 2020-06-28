@@ -42,5 +42,17 @@ class ModelsUsuario {
     	else:
     		echo '2';
     	endif;
-    }
+	}
+	
+	public function altusuario($id,$Dados){
+
+		$update = new ModelsUpdate();
+		$update->ExeUpdate('usuario',$Dados, 'WHERE ID = :ID','ID='.$id."");
+
+		if($update->getResult()):
+			echo '1';
+		else:
+			echo '2';
+		endif;
+	}
 }

@@ -9,8 +9,8 @@
     </div>
     <div class="col-sm-12">
         <div class="card">
-            <div class="card-header bg-red">
-                <p class="text-white">
+            <div class="card-header">
+                <p class="text-primary">
                     <b>Usuários cadastrados</b>
                 </p>
             </div>
@@ -64,23 +64,63 @@
                                         <div class="modal-body">
                                             <form class="form-group">
                                                 <label for="" class="label">Nome</label>
-                                                <input type="text" class="form-control" value="<?=$users['NOME'];?>" />
+                                                <input type="text" id="nome" class="form-control" value="<?= $users['NOME']; ?>" />
                                                 <label for="" class="label">Login</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" id="login" class="form-control" value="<?= $users['LOGIN'] ?>" />
                                                 <label for="" class="label">Senha</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" id="senha" class="form-control" />
+                                                <input type="hidden" id="id" value="<?= $users['ID'] ?>" class="form-control" />
                                             </form>
                                         </div>
                                         <div class="modal-footer">
-                                            <button type="button" class="btn btn-primary">Salvar alterações</button>
+                                            <button type="button" class="btn btn-primary btnUpdateUser<?= $users['ID'] ?>">Salvar alterações</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <script src="<?= URL ?>assets/jquery/jquery-3.2.1.min.js"></script>
+                            <script>
+                                $(".btnUpdateUser<?= $users['ID'] ?>").click(function() {
+                                    var ID = $('#id').val();
+                                    var NOME = $('#nome').val();
+                                    var LOGIN = $('#login').val();
+                                    var SENHA = $('#senha').val();
+                                    $.ajax({
+                                        type: "POST",
+                                        url: "http://localhost/assistCisWeb/adm/controle-usuario/altusuario",
+                                        data: {
+                                            id: ID,
+                                            nome: NOME,
+                                            login: LOGIN,
+                                            senha: SENHA
+                                        },
+                                        beforeSend: function() {
+                                            $('.btnUpdateUser<?= $users['ID'] ?>').html('Salvando...');
+                                            $('#nome').prop('disabled',true);
+                                            $('#login').prop('disabled',true);
+                                            $('#senha').prop('disabled',true);
+                                        },
+                                        success: function(res) {
+                                            if (res === '1') {
+                                                $('.btnUpdateUser<?= $users['ID'] ?>').html('Salvo');
+                                                setTimeout(function() {
+                                                    var novaURL = "http://localhost/assistCisWeb/adm/controle-usuario/index";
+                                                    $(window.document.location).attr('href', novaURL);
+                                                }, 2000);
+                                            } else if (res === '2') {
+                                                $('.btnUpdateUser<?= $users['ID'] ?>').html('Não foi possível salvar');
+                                                setTimeout(function() {
+                                                    var novaURL = "http://localhost/assistCisWeb/adm/controle-usuario/index";
+                                                    $(window.document.location).attr('href', novaURL);
+                                                }, 2000);
+                                            } else {
+                                                $('.btnUpdateUser<?= $users['ID'] ?>').html('Erro ao salvar...');
+                                            }
+                                        }
+                                    });
 
-
-
-
+                                });
+                            </script>
                         <?php
                         endforeach;
                         ?>
