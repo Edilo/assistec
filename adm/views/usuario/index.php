@@ -16,8 +16,8 @@
                 </p>
             </div>
             <div class="card-body" style="height: 500px;overflow: scroll;">
-                <table class="table table-hover">
-                    <thead class="bg-dark text-white font-weight-bold rounded">
+                <table class="table table-hover rounded">
+                    <thead class="bg-dark text-white font-weight-bold">
                         <th>ID</th>
                         <th>NOME</th>
                         <th>LOGIN</th>
@@ -65,12 +65,12 @@
                                         <div class="modal-body">
                                             <form class="form-group">
                                                 <label for="" class="label">Nome</label>
-                                                <input type="text" id="nome" class="form-control text-uppercase" value="<?= $users['NOME']; ?>" />
+                                                <input type="text" id="nomeAlt<?= $users['ID'] ?>" class="form-control text-uppercase" value="<?= $users['NOME']; ?>" />
                                                 <label for="" class="label">Login</label>
-                                                <input type="text" id="login" class="form-control" value="<?= $users['LOGIN'] ?>" />
+                                                <input type="text" id="loginAlt<?= $users['ID'] ?>" class="form-control" value="<?= $users['LOGIN'] ?>" />
                                                 <label for="" class="label">Senha</label>
-                                                <input type="password" id="senha" class="form-control" />
-                                                <input type="hidden" id="id" value="<?= $users['ID'] ?>" class="form-control" />
+                                                <input type="password" id="senhaAlt<?= $users['ID'] ?>" class="form-control" />
+                                                <input type="hidden" id="idAlt<?= $users['ID'] ?>" value="<?= $users['ID'] ?>" class="form-control" />
                                             </form>
                                         </div>
                                         <div class="modal-footer">
@@ -101,7 +101,7 @@
                                 });
                                 $(".btnDesativaUser<?= $users['ID'] ?>").click(function() {
                                     var val = $(".btnDesativaUser<?= $users['ID'] ?>").attr('nf');
-                                    var id = $("#id").val();
+                                    var id = $("#idAlt<?= $users['ID'] ?>").val();
                                     if (val === '1') {
                                         var msg = "Ativando";
                                     } else {
@@ -116,6 +116,8 @@
                                         },
                                         beforeSend: function() {
                                             $(".btnDesativaUser<?= $users['ID'] ?>").html(msg);
+                                            $('.btnUpdateUser<?= $users['ID'] ?>').prop('disabled',true);
+                                            $(".btnDesativaUser<?= $users['ID'] ?>").prop('disabled', true);
                                         },
                                         success: function(res) {
                                             if (res === '1') {
@@ -135,10 +137,10 @@
                                     });
                                 });
                                 $(".btnUpdateUser<?= $users['ID'] ?>").click(function() {
-                                    var ID = $('#id').val();
-                                    var NOME = $('#nome').val();
-                                    var LOGIN = $('#login').val();
-                                    var SENHA = $('#senha').val();
+                                    var ID = $("#idAlt<?= $users['ID'] ?>").val();
+                                    var NOME = $("#nomeAlt<?= $users['ID'] ?>").val();
+                                    var LOGIN = $("#loginAlt<?= $users['ID'] ?>").val();
+                                    var SENHA = $("#senhaAlt<?= $users['ID'] ?>").val();
                                     $.ajax({
                                         type: "POST",
                                         url: "http://192.168.100.140/assistCisWeb/adm/controle-usuario/altusuario",
@@ -151,6 +153,8 @@
                                         beforeSend: function() {
 
                                             $('.btnUpdateUser<?= $users['ID'] ?>').html("Salvando...");
+                                            $('.btnUpdateUser<?= $users['ID'] ?>').prop('disabled',true);
+                                            $(".btnDesativaUser<?= $users['ID'] ?>").prop('disabled', true);
                                             $('#nome').prop('disabled', true);
                                             $('#login').prop('disabled', true);
                                             $('#senha').prop('disabled', true);
@@ -231,6 +235,7 @@
             },
             beforeSend: function() {
                 $('.btnCreateUser').html("Salvando...");
+                $(".btnCreateUser").prop('disabled', true);
                 $('#novonome').prop('disabled', true);
                 $('#novologin').prop('disabled', true);
                 $('#novasenha').prop('disabled', true);
