@@ -13,7 +13,7 @@ $('#form_departamento').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-departamento/salvarDepartamento",
+        url: "http://192.168.100.140/OSproject/adm/controle-departamento/salvarDepartamento",
         data: {
             depdescricao: depdescricao,
             depresponsavel: depresponsavel
@@ -59,7 +59,7 @@ $('#form_departamento_editar').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-departamento/editarDepartamento",
+        url: "http://192.168.100.140/OSproject/adm/controle-departamento/editarDepartamento",
         data: {
             depcod: depcod,
             depdescricao: depdescricao,
@@ -84,7 +84,7 @@ $('#form_departamento_editar').submit(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-departamento/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-departamento/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);

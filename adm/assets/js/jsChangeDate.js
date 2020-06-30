@@ -11,18 +11,18 @@ $('#changeDate').change(function(){
     
     $.ajax({
         type: "POST",
-        url: "http://localhost/cisbioweb/adm/controle-home/gerarDashboardDinamico",
+        url: "http://192.168.100.140/cisbioweb/adm/controle-home/gerarDashboardDinamico",
         data: {
             date: date
         },
 
         beforeSend: function () {
             
-            $('#CafeQtd').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-            $('#AlmocoQtd').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-            $('#LancheQtd').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-            $('#TotalQtdDinamico').html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
-            $("#dataChange").html("<img src='http://localhost/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:15px;'/>");
+            $('#CafeQtd').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+            $('#AlmocoQtd').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+            $('#LancheQtd').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+            $('#TotalQtdDinamico').html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:20px;'/>");
+            $("#dataChange").html("<img src='http://192.168.100.140/cisbioweb/adm/assets/image/icone/carregando.gif' style='width:15px;'/>");
             
             $('#tableCafeDinamico').html('');
             $('#tableAlmocoDinamico').html('');

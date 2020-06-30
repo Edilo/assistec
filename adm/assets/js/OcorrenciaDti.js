@@ -20,7 +20,7 @@ $('#form_ocorrencia_dti').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrenciadti/salvarOcorrenciaDti",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/salvarOcorrenciaDti",
         data: {
             ocusucoddti: ocusucoddti,
             ocdepcoddti: ocdepcoddti,
@@ -74,7 +74,7 @@ $("#confirmarDti").click(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrenciadti/editarOcorrenciaDti",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/editarOcorrenciaDti",
         data: {
             occoddti: occoddti,
             ocdtprevisaodti: ocdtprevisaodti,
@@ -102,7 +102,7 @@ $("#confirmarDti").click(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);
@@ -124,7 +124,7 @@ $("#recusarDti").click(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrenciadti/recusarOcorrenciaDti",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/recusarOcorrenciaDti",
         data: {
             occoddti: occoddti
         },
@@ -147,7 +147,7 @@ $("#recusarDti").click(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);

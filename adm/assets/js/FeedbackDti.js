@@ -14,7 +14,7 @@ $('#form_feedback_dti').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-feedbackdti/salvarFeedbackDti",
+        url: "http://192.168.100.140/OSproject/adm/controle-feedbackdti/salvarFeedbackDti",
         data: {
             feeddescricaodti: feeddescricaodti,
             feedteccoddti: feedteccoddti,
@@ -35,7 +35,7 @@ $('#form_feedback_dti').submit(function () {
                 $('#carregar_tb_dti').html("<h5>Atualizando...</h5>");
                 limparCampos();
                 setTimeout(function () {
-                    $('#carregar_tb_dti').load("http://localhost/OSproject/adm/controle-ocorrenciadti/visualizardti/" + feedoccoddti + " #carregar_tb_dti");
+                    $('#carregar_tb_dti').load("http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/visualizardti/" + feedoccoddti + " #carregar_tb_dti");
                 }, 1000);
 
                 //$( "#result" ).load( "ajax/test.html #container" );
@@ -67,7 +67,7 @@ function excluir(id) {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/OSproject/adm/controle-feedbackDti/excluirFeedbackDti",
+            url: "http://192.168.100.140/OSproject/adm/controle-feedbackDti/excluirFeedbackDti",
             data: {
                 feedcoddti: id
             },
@@ -85,7 +85,7 @@ function excluir(id) {
                     $('#carregar_tb_dti').html("<h5>Atualizando...</h5>");
                     limparCampos();
                     setTimeout(function () {
-                        $('#carregar_tb_dti').load("http://localhost/OSproject/adm/controle-ocorrenciadti/visualizardti/" + id + " #carregar_tb_dti");
+                        $('#carregar_tb_dti').load("http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/visualizardti/" + id + " #carregar_tb_dti");
                     }, 1000);
                     //alert("PPPPPPPP");
 

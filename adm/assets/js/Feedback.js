@@ -14,7 +14,7 @@ $('#form_feedback').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-feedback/salvarFeedback",
+        url: "http://192.168.100.140/OSproject/adm/controle-feedback/salvarFeedback",
         data: {
             feeddescricao: feeddescricao,
             feedteccod: feedteccod,
@@ -35,7 +35,7 @@ $('#form_feedback').submit(function () {
                 $('#carregar_tb').html("<h5>Atualizando...</h5>");
                 limparCampos();
                 setTimeout(function () {
-                    $('#carregar_tb').load("http://localhost/OSproject/adm/controle-ocorrencia/visualizar/" + feedoccod + " #carregar_tb");
+                    $('#carregar_tb').load("http://192.168.100.140/OSproject/adm/controle-ocorrencia/visualizar/" + feedoccod + " #carregar_tb");
                 }, 1000);
 
                 //$( "#result" ).load( "ajax/test.html #container" );
@@ -67,7 +67,7 @@ function excluir(id) {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/OSproject/adm/controle-feedback/excluirFeedback",
+            url: "http://192.168.100.140/OSproject/adm/controle-feedback/excluirFeedback",
             data: {
                 feedcod: id
             },
@@ -85,7 +85,7 @@ function excluir(id) {
                     $('#carregar_tb').html("<h5>Atualizando...</h5>");
                     limparCampos();
                     setTimeout(function () {
-                        $('#carregar_tb').load("http://localhost/OSproject/adm/controle-ocorrencia/visualizar/" + id + " #carregar_tb");
+                        $('#carregar_tb').load("http://192.168.100.140/OSproject/adm/controle-ocorrencia/visualizar/" + id + " #carregar_tb");
                     }, 1000);
                     //alert("PPPPPPPP");
 

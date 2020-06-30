@@ -1,11 +1,11 @@
 <?php
 session_start();
-define('URL', 'http://localhost/assistCisWeb/adm/');
+define('URL', 'http://192.168.100.140/assistCisWeb/adm/');
 
 define('CONTROLER', 'controle-login');
 define('METODO', 'login');
 
-define('HOST', 'localhost');
+define('HOST', '192.168.100.140');
 define('USER', 'root');
 define('PASS', '');
 define('DBNAME', 'assistcis');

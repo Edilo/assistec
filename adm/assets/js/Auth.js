@@ -6,7 +6,7 @@ $('#accessAuth').click(function () {
     
     $.ajax({
         type: "POST",
-        url: "http://localhost//CisBioWeb/adm/controle-login/auth",
+        url: "http://192.168.100.140//CisBioWeb/adm/controle-login/auth",
         data: {
             email:email,
             password:pass

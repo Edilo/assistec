@@ -11,7 +11,7 @@ $("#executar").click(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrencia/salvarExecucao",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrencia/salvarExecucao",
         data: {
             atoccod: atoccod,
             atteccod1: atteccod1,
@@ -38,7 +38,7 @@ $("#executar").click(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-ocorrencia/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrencia/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);
@@ -82,7 +82,7 @@ $("#finalizar").click(function () {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/OSproject/adm/controle-ocorrencia/finalizarExecucao",
+            url: "http://192.168.100.140/OSproject/adm/controle-ocorrencia/finalizarExecucao",
             data: {
                 atcod: atcod,
                 atteccod1: atteccod1,
@@ -110,7 +110,7 @@ $("#finalizar").click(function () {
                     setTimeout(function () {
 
                         $('#msg').fadeOut(4000);
-                        var novaURL = "http://localhost/OSproject/adm/controle-ocorrencia/index";
+                        var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrencia/index";
                         $(window.document.location).attr('href', novaURL);
                     }, 1000);
 

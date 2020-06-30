@@ -8,7 +8,7 @@ function avaliar(id, status) {
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost/OSproject/adm/controle-ocorrenciadti/avaliarOcorrenciaDti",
+                url: "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/avaliarOcorrenciaDti",
                 data: {
                     occoddti: id,
                     ocavaliacaodti: ocavaliacaodti
@@ -32,7 +32,7 @@ function avaliar(id, status) {
                         setTimeout(function () {
 
                             $('#msg').fadeOut(4000);
-                            var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+                            var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
                             $(window.document.location).attr('href', novaURL);
                         }, 1000);
                         console.log(resultado);
@@ -46,12 +46,12 @@ function avaliar(id, status) {
     } else if (status === 'Recusado') {
         alert('Não é possivel avaliar. Processo foi Recusado');
 
-        var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+        var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
         $(window.document.location).attr('href', novaURL);
     } else {
         alert('Não é possivel avaliar. Processo em andamento!');
 
-        var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+        var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
         $(window.document.location).attr('href', novaURL);
     }
 

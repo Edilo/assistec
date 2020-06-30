@@ -20,7 +20,7 @@ $('#form_ocorrencia').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrencia/salvarOcorrencia",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrencia/salvarOcorrencia",
         data: {
             ocusucod: ocusucod,
             ocdepcod: ocdepcod,
@@ -74,7 +74,7 @@ $("#confirmar").click(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrencia/editarOcorrencia",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrencia/editarOcorrencia",
         data: {
             occod: occod,
             ocdtprevisao: ocdtprevisao,
@@ -102,7 +102,7 @@ $("#confirmar").click(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-ocorrencia/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrencia/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);
@@ -129,7 +129,7 @@ $("#recusar").click(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrencia/recusarOcorrencia",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrencia/recusarOcorrencia",
         data: {
             occod: occod
         },
@@ -152,7 +152,7 @@ $("#recusar").click(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-ocorrencia/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrencia/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);

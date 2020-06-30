@@ -22,21 +22,18 @@ class ModelsUsuario {
 		return $this->Resultado;
 	}
 
-    public function saveuser($nome,$login,$senha,$nivel) {
-    	date_default_timezone_set('America/Manaus');
-        $date = date('Y-m-d H:i:s');
-
+    public function saveuser($nome,$login,$senha) {
+		date_default_timezone_set('America/Manaus');
+		$date = date('Y-m-d H:i:s');
+		
     	$Dados = [
-    		'user_nome' => $nome,
-    		'user_login' => $login,
-    		'user_password' => md5($senha),
-    		'user_nivel' => $nivel,
-    		'user_data' => $date
+    		'NOME' => strtoupper($nome),
+    		'LOGIN' => $login,
+			'SENHA' => md5($senha),
+			'DATA' => $date
     	];
-
-
     	$create = new ModelsCreate();
-    	$create->ExeCreate('tblusuario',$Dados);
+    	$create->ExeCreate('usuario',$Dados);
     	if($create->getResult()):
     		echo '1';
     	else:
@@ -46,6 +43,17 @@ class ModelsUsuario {
 	
 	public function altusuario($id,$Dados){
 
+		$update = new ModelsUpdate();
+		$update->ExeUpdate('usuario',$Dados, 'WHERE ID = :ID','ID='.$id."");
+
+		if($update->getResult()):
+			echo '1';
+		else:
+			echo '2';
+		endif;
+	}
+
+	public function desativausuario($id,$Dados){
 		$update = new ModelsUpdate();
 		$update->ExeUpdate('usuario',$Dados, 'WHERE ID = :ID','ID='.$id."");
 

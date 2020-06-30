@@ -11,7 +11,7 @@ $("#executarDti").click(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-ocorrenciadti/salvarExecucaoDti",
+        url: "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/salvarExecucaoDti",
         data: {
             atoccoddti: atoccoddti,
             atteccod1dti: atteccod1dti,
@@ -38,7 +38,7 @@ $("#executarDti").click(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);
@@ -82,7 +82,7 @@ $("#finalizarDti").click(function () {
 
         $.ajax({
             type: "POST",
-            url: "http://localhost/OSproject/adm/controle-ocorrenciadti/finalizarExecucaoDti",
+            url: "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/finalizarExecucaoDti",
             data: {
                 atcoddti: atcoddti,
                 atteccod1dti: atteccod1dti,
@@ -110,7 +110,7 @@ $("#finalizarDti").click(function () {
                     setTimeout(function () {
 
                         $('#msg').fadeOut(4000);
-                        var novaURL = "http://localhost/OSproject/adm/controle-ocorrenciadti/index";
+                        var novaURL = "http://192.168.100.140/OSproject/adm/controle-ocorrenciadti/index";
                         $(window.document.location).attr('href', novaURL);
                     }, 1000);
 

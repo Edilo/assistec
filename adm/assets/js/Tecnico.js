@@ -12,7 +12,7 @@ $('#form_tecnico').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-tecnico/salvarTecnico",
+        url: "http://192.168.100.140/OSproject/adm/controle-tecnico/salvarTecnico",
         data: {
             tecmatricula: tecmatricula,
             tecnome: tecnome
@@ -58,7 +58,7 @@ $('#form_tecnico_editar').submit(function () {
 
     $.ajax({
         type: "POST",
-        url: "http://localhost/OSproject/adm/controle-tecnico/editarTecnico",
+        url: "http://192.168.100.140/OSproject/adm/controle-tecnico/editarTecnico",
         data: {
             teccod: teccod,
             tecmatricula: tecmatricula,
@@ -83,7 +83,7 @@ $('#form_tecnico_editar').submit(function () {
                 setTimeout(function () {
 
                     $('#msg').fadeOut(4000);
-                    var novaURL = "http://localhost/OSproject/adm/controle-tecnico/index";
+                    var novaURL = "http://192.168.100.140/OSproject/adm/controle-tecnico/index";
                     $(window.document.location).attr('href', novaURL);
                 }, 1000);
                 console.log(resultado);

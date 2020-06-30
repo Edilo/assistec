@@ -47,7 +47,7 @@ $('#form_usuario').submit(function () {
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost/OSproject/adm/controle-usuario/salvarUsuario",
+                url: "http://192.168.100.140/OSproject/adm/controle-usuario/salvarUsuario",
                 data: {
                     usunome: usunome,
                     usulogin: usulogin,

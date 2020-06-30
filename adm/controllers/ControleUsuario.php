@@ -11,50 +11,71 @@
  *
  * @author EdiloSousa
  */
-class ControleUsuario {
+class ControleUsuario
+{
 
     private $Dados;
     private $UserId;
 
-    public function index(){
+    public function index()
+    {
         $users = new ModelsUsuario();
         $this->Dados = $users->usuarios();
-        $CarregarView = new ConfigView("usuario/index",$this->Dados);
+        $CarregarView = new ConfigView("usuario/index", $this->Dados);
         $CarregarView->renderizar();
     }
 
-    public function cadusuario(){
-    	$nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
+    public function cadusuario()
+    {
+        $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
         $login = filter_input(INPUT_POST, 'login', FILTER_DEFAULT);
-     	$senha = filter_input(INPUT_POST, 'senha', FILTER_DEFAULT);
-     	$nivel = filter_input(INPUT_POST, 'nivel', FILTER_DEFAULT);	
+        $senha = filter_input(INPUT_POST, 'senha', FILTER_DEFAULT);
 
-        $saveuser = new ModelsUsuario();
-        $saveuser->saveuser($nome,$login,$senha,$nivel);
-
-
+        if (trim($nome) === '') :
+            echo 'erro';
+        elseif (trim($login) === '') :
+            echo 'erro';
+        elseif (trim($senha) === '') :
+            echo 'erro';
+        else :
+            $saveuser = new ModelsUsuario();
+            $saveuser->saveuser($nome, $login, $senha);
+        endif;
     }
 
-    public function altusuario(){
+    public function altusuario()
+    {
         $id = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
         $nome = filter_input(INPUT_POST, 'nome', FILTER_DEFAULT);
         $login = filter_input(INPUT_POST, 'login', FILTER_DEFAULT);
         $senha = filter_input(INPUT_POST, 'senha', FILTER_DEFAULT);
 
-        if($senha === ''):
+        if ($senha === '') :
             $Dados = [
-                'NOME' => $nome,
+                'NOME' => strtoupper($nome),
                 'LOGIN' => $login
             ];
-        else:
+        else :
             $Dados = [
-                'NOME' => $nome,
+                'NOME' => strtoupper($nome),
                 'LOGIN' => $login,
                 'SENHA' => md5($senha)
             ];
         endif;
 
         $altusuario = new ModelsUsuario();
-        $altusuario->altusuario($id,$Dados);
+        $altusuario->altusuario($id, $Dados);
+    }
+
+    public function desativausuario(){
+        $id = filter_input(INPUT_POST, 'id', FILTER_DEFAULT);
+        $val = filter_input(INPUT_POST, 'val', FILTER_DEFAULT);
+
+        $Dados = [
+            'STATUS' => $val
+        ];
+
+        $des = new ModelsUsuario();
+        $des->desativausuario($id,$Dados);
     }
 }
