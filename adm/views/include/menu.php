@@ -15,11 +15,11 @@
         </a>
       </li>
       <li class="nav-item">
-        <a class=" nav-link " href="<?= URL ?>controle-home/relatorios"> <i class="ni ni-single-02 text-primary"></i> Cliente
+        <a class=" nav-link " href="<?= URL ?>controle-cliente/index"> <i class="ni ni-single-02 text-primary"></i> Cliente
         </a>
       </li>
       <li class="nav-item">
-        <a class=" nav-link " href="<?= URL ?>controle-home/relatorios"> <i class="ni ni-settings text-primary"></i> Técnico
+        <a class=" nav-link " href="<?= URL ?>controle-tecnico/index"> <i class="ni ni-settings text-primary"></i> Técnico
         </a>
       </li>
     </ul>
