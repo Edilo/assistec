@@ -93,9 +93,9 @@
                             <script>
                                 $(document).ready(function() {
                                     if ("<?= $users['STATUS'] ?>" === '2') {
-                                        $('#nome').prop('disabled', true);
-                                        $('#login').prop('disabled', true);
-                                        $('#senha').prop('disabled', true);
+                                        $('#nomeAlt<?= $users['ID'] ?>').prop('disabled', true);
+                                        $('#loginAlt<?= $users['ID'] ?>').prop('disabled', true);
+                                        $('#senhaAlt<?= $users['ID'] ?>').prop('disabled', true);
                                         $(".btnUpdateUser<?= $users['ID'] ?>").prop('disabled', true);
                                     }
                                 });
